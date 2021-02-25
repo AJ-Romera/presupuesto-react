@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function Pregunta() {
     // Definir el state
     const [cantidad, setCantidad] = useState(0);
+    const [error, setError] = useState(false);
 
     // Función que lee el presupuesto
     const definirPresupuesto = (e) => {
@@ -14,15 +15,22 @@ function Pregunta() {
         e.preventDefault();
 
         // Validar
+        if (cantidad < 1 || isNaN(cantidad)) {
+            setError(true);
+            return;
+        }
 
         // Si se pasa la validación
+        setError(false);
     };
 
     return (
         <div className='pregunta'>
             <h2>Coloca tu presupuesto</h2>
 
-            <form>
+            {/* { error ?  : null } */}
+
+            <form onSubmit={agregarPresupuesto}>
                 <input
                     type='number'
                     className='u-full-width'
