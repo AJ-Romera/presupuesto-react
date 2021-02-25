@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Error from './Error';
 
-function Pregunta() {
+function Pregunta({ setPresupuesto, setRestante }) {
     // Definir el state
     const [cantidad, setCantidad] = useState(0);
     const [error, setError] = useState(false);
@@ -23,6 +23,8 @@ function Pregunta() {
 
         // Si se pasa la validación
         setError(false);
+        setPresupuesto(cantidad);
+        setRestante(cantidad);
     };
 
     return (
