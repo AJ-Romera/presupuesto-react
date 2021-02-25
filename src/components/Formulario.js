@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Formulario() {
+    const [nombre, setNombre] = useState('');
+    const [cantidad, setCantidad] = useState(0);
+
+    // Cuando el usuario añade un gasto
+    const agregarGasto = (e) => {
+        e.preventDefault();
+
+        // Validar
+
+        // Construir el gasto
+
+        // Pasar el gasto al componente principal
+
+        // Restear el form
+    };
+
     return (
         <div className='formulario'>
-            <form>
+            <form onSubmit={agregarGasto}>
                 <h2>Agrega tus gatos aquí</h2>
 
                 <div className='campo'>
@@ -12,6 +28,8 @@ function Formulario() {
                         type='text'
                         className='u-full-width'
                         placeholder='Ej. Transporte'
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
                     />
                 </div>
 
@@ -21,6 +39,10 @@ function Formulario() {
                         type='number'
                         className='u-full-width'
                         placeholder='Ej. 300'
+                        value={cantidad}
+                        onChange={(e) =>
+                            setCantidad(parseInt(e.target.value, 10))
+                        }
                     />
                 </div>
 
