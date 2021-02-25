@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Error from './Error';
 
 function Pregunta() {
     // Definir el state
@@ -28,7 +29,7 @@ function Pregunta() {
         <div className='pregunta'>
             <h2>Coloca tu presupuesto</h2>
 
-            {/* { error ?  : null } */}
+            {error ? <Error mensaje='El Presupuesto es Incorrecto' /> : null}
 
             <form onSubmit={agregarPresupuesto}>
                 <input
