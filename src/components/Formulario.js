@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
+import { nanoid } from 'nanoid';
 
 function Formulario() {
     const [nombre, setNombre] = useState('');
@@ -18,6 +19,13 @@ function Formulario() {
         setError(false);
 
         // Construir el gasto
+        const gasto = {
+            nombre,
+            cantidad,
+            id: nanoid(),
+        };
+
+        console.log(gasto);
 
         // Pasar el gasto al componente principal
 
