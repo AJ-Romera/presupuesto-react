@@ -15,17 +15,17 @@ function App() {
 
     // useEffect para actualizar el restante
     useEffect(() => {
-        // Agrega nuevo presupuesto
         if (crearGasto) {
+            // Agrega nuevo presupuesto
             setGastos([...gastos, gasto]);
+
+            // Resta del presupuesto actual
+            const presupuestoRestante = restante - gasto.cantidad;
+            setRestante(presupuestoRestante);
+
+            // Resetear a false
+            setCrearGasto(false);
         }
-
-        // Resta del presupuesto actual
-        const presupuestoRestante = restante - gasto.cantidad;
-        setRestante(presupuestoRestante);
-
-        // Resetear a false
-        setCrearGasto(false);
     }, [gasto, crearGasto, gastos, restante]);
 
     return (
