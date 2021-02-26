@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Error from './Error';
 import { nanoid } from 'nanoid';
 
-function Formulario({ agregarNuevoGasto }) {
+function Formulario({ setGasto, setCrearGasto }) {
     const [nombre, setNombre] = useState('');
     const [cantidad, setCantidad] = useState(0);
     const [error, setError] = useState(false);
@@ -26,7 +26,8 @@ function Formulario({ agregarNuevoGasto }) {
         };
 
         // Pasar el gasto al componente principal
-        agregarNuevoGasto(gasto);
+        setGasto(gasto);
+        setCrearGasto(true);
 
         // Restear el form
         setNombre('');
