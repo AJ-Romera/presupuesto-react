@@ -50,11 +50,11 @@ function App() {
                             </div>
 
                             <div className='one-half column'>
-                                <Listado gastos={gastos} />
                                 <ControlPresupuesto
                                     presupuesto={presupuesto}
                                     restante={restante}
                                 />
+                                <Listado gastos={gastos} />
                             </div>
                         </div>
                     )}

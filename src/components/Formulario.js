@@ -31,7 +31,7 @@ function Formulario({ setGasto, setCrearGasto }) {
 
         // Restear el form
         setNombre('');
-        setCantidad(0);
+        setCantidad('');
     };
 
     return (
