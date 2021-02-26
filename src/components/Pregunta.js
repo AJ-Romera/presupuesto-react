@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Error from './Error';
 
 function Pregunta({ setPresupuesto, setRestante, setMostrarPregunta }) {
@@ -51,5 +52,11 @@ function Pregunta({ setPresupuesto, setRestante, setMostrarPregunta }) {
         </div>
     );
 }
+
+Pregunta.propTypes = {
+    setPresupuesto: PropTypes.func.isRequired,
+    setRestante: PropTypes.func.isRequired,
+    setMostrarPregunta: PropTypes.func.isRequired,
+};
 
 export default Pregunta;

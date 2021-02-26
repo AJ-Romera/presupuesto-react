@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Error from './Error';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import Error from './Error';
 
 function Formulario({ setGasto, setCrearGasto }) {
     const [nombre, setNombre] = useState('');
@@ -76,5 +77,10 @@ function Formulario({ setGasto, setCrearGasto }) {
         </div>
     );
 }
+
+Formulario.propTypes = {
+    setGasto: PropTypes.func.isRequired,
+    setCrearGasto: PropTypes.func.isRequired,
+};
 
 export default Formulario;

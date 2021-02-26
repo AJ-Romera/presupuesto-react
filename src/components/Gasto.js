@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Gasto({ gasto }) {
     return (
@@ -13,5 +14,9 @@ function Gasto({ gasto }) {
         </div>
     );
 }
+
+Gasto.propTypes = {
+    gasto: PropTypes.object.isRequired,
+};
 
 export default Gasto;
