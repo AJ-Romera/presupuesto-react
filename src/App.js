@@ -3,6 +3,7 @@ import Pregunta from './components/Pregunta';
 import Formulario from './components/Formulario';
 import Listado from './components/Listado';
 import ControlPresupuesto from './components/ControlPresupuesto';
+import Error from './components/Error';
 
 function App() {
     // Definir el state
@@ -12,6 +13,7 @@ function App() {
     const [gastos, setGastos] = useState([]);
     const [gasto, setGasto] = useState({});
     const [crearGasto, setCrearGasto] = useState(false);
+    const [error, setError] = useState(false);
 
     // useEffect para actualizar el restante
     useEffect(() => {
@@ -23,8 +25,16 @@ function App() {
             const presupuestoRestante = restante - gasto.cantidad;
             setRestante(presupuestoRestante);
 
+            // Comprueba si nos hemos pasado del presupuesto
+            if (restante < gasto.cantidad) {
+                setError(true);
+                setCrearGasto(false);
+                return;
+            }
+
             // Resetear a false
             setCrearGasto(false);
+            setError(false);
         }
     }, [gasto, crearGasto, gastos, restante]);
 
@@ -54,6 +64,9 @@ function App() {
                                     presupuesto={presupuesto}
                                     restante={restante}
                                 />
+                                {error ? (
+                                    <Error mensaje='¡Has excedido tu presupuesto!' />
+                                ) : null}
                                 <Listado gastos={gastos} />
                             </div>
                         </div>

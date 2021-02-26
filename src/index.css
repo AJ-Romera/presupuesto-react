@@ -2,9 +2,9 @@
     margin-bottom: 0 !important;
 }
 body {
-    background: #000428; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #004e92, #000428);
-    background: linear-gradient(to right, #004e92, #000428);
+    background: #090e3f; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1966a8, #0d1242);
+    background: linear-gradient(to left, #1963a3, #0b1149);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
